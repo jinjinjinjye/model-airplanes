@@ -1,0 +1,66 @@
+{
+  "model": "ngram",
+  "smoothing": "interpolated_kneser_ney",
+  "discount": 0.75,
+  "selected_order": 3,
+  "context_length": 2,
+  "vocabulary_size": 19531,
+  "min_frequency": 2,
+  "test_cross_entropy_nats": 4.454663129926112,
+  "test_perplexity": 86.02716598558462,
+  "test_tokens": 494008,
+  "training_seconds": 8.303352399998403,
+  "order_search_fraction": 0.2,
+  "order_search_seed": 42,
+  "order_search_vocabulary_size": 9743,
+  "model_size_bytes": 37464216,
+  "model_size_mb": 35.728660583496094,
+  "inference_benchmark": {
+    "tokens": 10000,
+    "repeats": 3,
+    "times_seconds": [
+      0.026561800001218216,
+      0.027781299999332987,
+      0.026067800001328578
+    ],
+    "median_seconds": 0.026561800001218216,
+    "tokens_per_second": 376480.5095867511
+  },
+  "order_selection": [
+    {
+      "order": 2,
+      "context_length": 1,
+      "training_seconds": 0.5990363999990223,
+      "validation_cross_entropy": 4.895033685397013,
+      "validation_perplexity": 133.62450773332895,
+      "validation_tokens": 500832
+    },
+    {
+      "order": 3,
+      "context_length": 2,
+      "training_seconds": 1.8572043999993184,
+      "validation_cross_entropy": 4.716930222171264,
+      "validation_perplexity": 111.82444902307167,
+      "validation_tokens": 500832
+    },
+    {
+      "order": 5,
+      "context_length": 4,
+      "training_seconds": 5.618512100001681,
+      "validation_cross_entropy": 4.76341939358958,
+      "validation_perplexity": 117.14580945963223,
+      "validation_tokens": 500832
+    }
+  ],
+  "generation_settings": {
+    "max_new_tokens": 40,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": null,
+    "seed": 42
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel"
+  }
+}

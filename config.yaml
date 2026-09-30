@@ -1,0 +1,43 @@
+seed: 27
+
+data:
+  raw_path: data/raw/ASRS_merged.csv
+  processed_dir: data/processed
+  raw_text_column: "Report 1 | Narrative"
+  raw_id_column: "ACN"
+  processed_text_column: "text"
+  processed_id_column: "acn"
+
+split:
+  train: 0.8
+  validation: 0.1
+  test: 0.1
+
+tokenizer:
+  lowercase: true
+  min_frequency: 2
+
+language_model:
+  sequence_length: 128
+
+ngram:
+  candidate_orders: [2, 3, 4, 5]
+  discount: 0.75
+  order_search_fraction: 0.2
+  order_search_seed: 42
+
+evaluation:
+  benchmark_tokens: 10000
+  benchmark_repeats: 3
+
+  generation:
+    max_new_tokens: 40
+    seed: 42
+    temperature: 1.0
+    top_k: null
+    top_p: null
+    prompts:
+      - "the aircraft"
+      - "during approach"
+      - "the captain"
+      - "after landing"
