@@ -17,7 +17,7 @@ venv/
 Thumbs.db
 
 # Large/local data
-data/raw/
+#data/raw/
 
 # Model/cache files
 *.pt
