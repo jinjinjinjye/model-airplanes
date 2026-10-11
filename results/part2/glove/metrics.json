@@ -1,0 +1,39 @@
+{
+  "model": "lstm",
+  "embedding_variant": "glove",
+  "embedding_frozen": true,
+  "context_length": 128,
+  "vocabulary_size": 19531,
+  "test_cross_entropy_nats": 4.49540065883928,
+  "test_perplexity": 89.60406245380503,
+  "test_tokens": 494008,
+  "parameters": 4722455,
+  "checkpoint_size_bytes": 19220219,
+  "inference_benchmark": {
+    "workload_tokens": 200,
+    "batch_size": 1,
+    "repeats": 3,
+    "times_seconds": [
+      0.11001800000121875,
+      0.10735650000060559,
+      0.10914999999840802
+    ],
+    "median_seconds": 0.10914999999840802,
+    "tokens_per_second": 1832.340815418388,
+    "timing_includes": "scoring known next-token probability, excluding tokenization and disk I/O; batch=1"
+  },
+  "generation_settings": {
+    "max_new_tokens": 40,
+    "seed": 42,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": 1.0,
+    "prompts": [
+      "the aircraft",
+      "during approach",
+      "the captain",
+      "after landing"
+    ]
+  },
+  "device": "cuda"
+}

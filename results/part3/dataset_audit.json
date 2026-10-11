@@ -1,0 +1,76 @@
+{
+  "raw_label_distribution": {
+    "Aircraft": 6391,
+    "Human Factors": 6265,
+    "Procedure": 1777,
+    "Ambiguous": 1620,
+    "Weather": 633,
+    "Airport": 474,
+    "Environment - Non Weather Related": 317,
+    "Airspace Structure": 240,
+    "Chart Or Publication": 222,
+    "ATC Equipment / Nav Facility / Buildings": 219,
+    "Software and Automation": 117,
+    "Company Policy": 84,
+    "Equipment / Tooling": 79,
+    "Incorrect / Not Installed / Unavailable Part": 32,
+    "MEL": 30,
+    "nan": 26,
+    "Manuals": 20,
+    "Staffing": 9,
+    "Logbook Entry": 2
+  },
+  "processed_original_rows": {
+    "train": 14845,
+    "validation": 1856,
+    "test": 1856
+  },
+  "removed_outside_top_five_or_empty_text": {
+    "train": 2395,
+    "validation": 321,
+    "test": 301
+  },
+  "removed_conflicting_duplicate_texts": {
+    "train": 1,
+    "validation": 1,
+    "test": 0
+  },
+  "removed_repeated_texts": {
+    "train": 2,
+    "validation": 0,
+    "test": 0
+  },
+  "missing_raw_ACNs": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "usable_rows": {
+    "train": 12447,
+    "validation": 1534,
+    "test": 1555
+  },
+  "usable_class_counts": {
+    "train": {
+      "Aircraft": 5067,
+      "Human Factors": 5080,
+      "Procedure": 1416,
+      "Weather": 506,
+      "Airport": 378
+    },
+    "validation": {
+      "Aircraft": 671,
+      "Human Factors": 574,
+      "Procedure": 174,
+      "Weather": 63,
+      "Airport": 52
+    },
+    "test": {
+      "Aircraft": 651,
+      "Human Factors": 610,
+      "Procedure": 186,
+      "Weather": 64,
+      "Airport": 44
+    }
+  }
+}

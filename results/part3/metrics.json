@@ -1,0 +1,440 @@
+{
+  "task": "ASRS five-class primary problem classification",
+  "classes": [
+    "Aircraft",
+    "Human Factors",
+    "Procedure",
+    "Weather",
+    "Airport"
+  ],
+  "seed": 42,
+  "data": {
+    "raw_label_distribution": {
+      "Aircraft": 6391,
+      "Human Factors": 6265,
+      "Procedure": 1777,
+      "Ambiguous": 1620,
+      "Weather": 633,
+      "Airport": 474,
+      "Environment - Non Weather Related": 317,
+      "Airspace Structure": 240,
+      "Chart Or Publication": 222,
+      "ATC Equipment / Nav Facility / Buildings": 219,
+      "Software and Automation": 117,
+      "Company Policy": 84,
+      "Equipment / Tooling": 79,
+      "Incorrect / Not Installed / Unavailable Part": 32,
+      "MEL": 30,
+      "nan": 26,
+      "Manuals": 20,
+      "Staffing": 9,
+      "Logbook Entry": 2
+    },
+    "processed_original_rows": {
+      "train": 14845,
+      "validation": 1856,
+      "test": 1856
+    },
+    "removed_outside_top_five_or_empty_text": {
+      "train": 2395,
+      "validation": 321,
+      "test": 301
+    },
+    "removed_conflicting_duplicate_texts": {
+      "train": 1,
+      "validation": 1,
+      "test": 0
+    },
+    "removed_repeated_texts": {
+      "train": 2,
+      "validation": 0,
+      "test": 0
+    },
+    "missing_raw_ACNs": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
+    },
+    "usable_rows": {
+      "train": 12447,
+      "validation": 1534,
+      "test": 1555
+    },
+    "usable_class_counts": {
+      "train": {
+        "Aircraft": 5067,
+        "Human Factors": 5080,
+        "Procedure": 1416,
+        "Weather": 506,
+        "Airport": 378
+      },
+      "validation": {
+        "Aircraft": 671,
+        "Human Factors": 574,
+        "Procedure": 174,
+        "Weather": 63,
+        "Airport": 52
+      },
+      "test": {
+        "Aircraft": 651,
+        "Human Factors": 610,
+        "Procedure": 186,
+        "Weather": 64,
+        "Airport": 44
+      }
+    }
+  },
+  "data_fingerprint": "368920ea3e30b4c95d968f0bd85c14edb6f737bc65d7a6a40b66c376afb26dbd",
+  "context_window": 128,
+  "max_chunks_per_report": 4,
+  "pooling": "token-weighted mean of lexical hidden states across nonoverlapping windows",
+  "freeze_language_models": true,
+  "classifier": "StandardScaler + class-balanced multinomial logistic regression",
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "selection_metric": "validation macro-F1",
+  "refit": "train+validation after selecting C",
+  "majority_baseline": {
+    "majority_class": "Human Factors",
+    "test_accuracy": 0.39228295819935693,
+    "test_macro_f1": 0.11270207852193996
+  },
+  "results": {
+    "lstm": {
+      "selected_C": 0.1,
+      "validation_macro_f1_by_C": {
+        "0.01": 0.4768285264610719,
+        "0.1": 0.4972518080197135,
+        "1.0": 0.4968996115105229,
+        "10.0": 0.4950563311206717
+      },
+      "best_validation_macro_f1": 0.4972518080197135,
+      "test_accuracy": 0.6019292604501608,
+      "test_macro_f1": 0.4955660598746186,
+      "test_report": {
+        "Aircraft": {
+          "precision": 0.8804920913884007,
+          "recall": 0.7695852534562212,
+          "f1-score": 0.8213114754098361,
+          "support": 651.0
+        },
+        "Human Factors": {
+          "precision": 0.7336956521739131,
+          "recall": 0.4426229508196721,
+          "f1-score": 0.5521472392638037,
+          "support": 610.0
+        },
+        "Procedure": {
+          "precision": 0.2781456953642384,
+          "recall": 0.45161290322580644,
+          "f1-score": 0.3442622950819672,
+          "support": 186.0
+        },
+        "Weather": {
+          "precision": 0.26666666666666666,
+          "recall": 0.75,
+          "f1-score": 0.39344262295081966,
+          "support": 64.0
+        },
+        "Airport": {
+          "precision": 0.2426470588235294,
+          "recall": 0.75,
+          "f1-score": 0.36666666666666664,
+          "support": 44.0
+        },
+        "accuracy": 0.6019292604501608,
+        "macro avg": {
+          "precision": 0.48032943288334967,
+          "recall": 0.63276422150034,
+          "f1-score": 0.4955660598746186,
+          "support": 1555.0
+        },
+        "weighted avg": {
+          "precision": 0.7075452964068077,
+          "recall": 0.6019292604501608,
+          "f1-score": 0.6281865173827365,
+          "support": 1555.0
+        }
+      },
+      "confusion_matrix_classes": [
+        "Aircraft",
+        "Human Factors",
+        "Procedure",
+        "Weather",
+        "Airport"
+      ],
+      "confusion_matrix": [
+        [
+          501,
+          47,
+          43,
+          50,
+          10
+        ],
+        [
+          41,
+          270,
+          168,
+          62,
+          69
+        ],
+        [
+          23,
+          39,
+          84,
+          17,
+          23
+        ],
+        [
+          3,
+          7,
+          5,
+          48,
+          1
+        ],
+        [
+          1,
+          5,
+          2,
+          3,
+          33
+        ]
+      ],
+      "classifier_probabilities_order": [
+        "Aircraft",
+        "Airport",
+        "Human Factors",
+        "Procedure",
+        "Weather"
+      ],
+      "extraction": {
+        "train": {
+          "reports": 12447,
+          "windows": 29058,
+          "feature_dimension": 128,
+          "truncated_reports": 1431,
+          "fraction_truncated": 0.11496746203904555,
+          "retained_token_fraction": 0.8919889140058928,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 3.4296412999992754,
+          "extractor_method": "encode"
+        },
+        "validation": {
+          "reports": 1534,
+          "windows": 3589,
+          "feature_dimension": 128,
+          "truncated_reports": 178,
+          "fraction_truncated": 0.11603650586701435,
+          "retained_token_fraction": 0.8915257402229287,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 0.43880449999960547,
+          "extractor_method": "encode"
+        },
+        "test": {
+          "reports": 1555,
+          "windows": 3632,
+          "feature_dimension": 128,
+          "truncated_reports": 170,
+          "fraction_truncated": 0.10932475884244373,
+          "retained_token_fraction": 0.8892031746559957,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 0.45432289999916975,
+          "extractor_method": "encode"
+        }
+      },
+      "lm_test_metrics": {
+        "test_perplexity": 74.13237923275072,
+        "test_cross_entropy_nats": 4.305852403563682,
+        "source": "results\\lstm\\metrics.json"
+      },
+      "test_errors": 619,
+      "checkpoint": "E:\\Projects\\model-airplanes\\checkpoints\\lstm.pt"
+    },
+    "transformer": {
+      "selected_C": 0.1,
+      "validation_macro_f1_by_C": {
+        "0.01": 0.5183950586739512,
+        "0.1": 0.5334856096317895,
+        "1.0": 0.5294940731998474,
+        "10.0": 0.5263572150362993
+      },
+      "best_validation_macro_f1": 0.5334856096317895,
+      "test_accuracy": 0.6237942122186495,
+      "test_macro_f1": 0.5049649121023954,
+      "test_report": {
+        "Aircraft": {
+          "precision": 0.8913043478260869,
+          "recall": 0.8187403993855606,
+          "f1-score": 0.8534827862289832,
+          "support": 651.0
+        },
+        "Human Factors": {
+          "precision": 0.7615176151761518,
+          "recall": 0.460655737704918,
+          "f1-score": 0.5740551583248212,
+          "support": 610.0
+        },
+        "Procedure": {
+          "precision": 0.2604166666666667,
+          "recall": 0.4032258064516129,
+          "f1-score": 0.31645569620253167,
+          "support": 186.0
+        },
+        "Weather": {
+          "precision": 0.3128834355828221,
+          "recall": 0.796875,
+          "f1-score": 0.44933920704845814,
+          "support": 64.0
+        },
+        "Airport": {
+          "precision": 0.21897810218978103,
+          "recall": 0.6818181818181818,
+          "f1-score": 0.3314917127071823,
+          "support": 44.0
+        },
+        "accuracy": 0.6237942122186495,
+        "macro avg": {
+          "precision": 0.48902003348830175,
+          "recall": 0.6322630250720547,
+          "f1-score": 0.5049649121023954,
+          "support": 1555.0
+        },
+        "weighted avg": {
+          "precision": 0.7220977183703448,
+          "recall": 0.6237942122186495,
+          "f1-score": 0.6482283244482941,
+          "support": 1555.0
+        }
+      },
+      "confusion_matrix_classes": [
+        "Aircraft",
+        "Human Factors",
+        "Procedure",
+        "Weather",
+        "Airport"
+      ],
+      "confusion_matrix": [
+        [
+          533,
+          28,
+          45,
+          42,
+          3
+        ],
+        [
+          42,
+          281,
+          161,
+          51,
+          75
+        ],
+        [
+          19,
+          49,
+          75,
+          16,
+          27
+        ],
+        [
+          4,
+          3,
+          4,
+          51,
+          2
+        ],
+        [
+          0,
+          8,
+          3,
+          3,
+          30
+        ]
+      ],
+      "classifier_probabilities_order": [
+        "Aircraft",
+        "Airport",
+        "Human Factors",
+        "Procedure",
+        "Weather"
+      ],
+      "extraction": {
+        "train": {
+          "reports": 12447,
+          "windows": 29058,
+          "feature_dimension": 100,
+          "truncated_reports": 1431,
+          "fraction_truncated": 0.11496746203904555,
+          "retained_token_fraction": 0.8919889140058928,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 3.8750151000003825,
+          "extractor_method": "encode"
+        },
+        "validation": {
+          "reports": 1534,
+          "windows": 3589,
+          "feature_dimension": 100,
+          "truncated_reports": 178,
+          "fraction_truncated": 0.11603650586701435,
+          "retained_token_fraction": 0.8915257402229287,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 0.4776755000002595,
+          "extractor_method": "encode"
+        },
+        "test": {
+          "reports": 1555,
+          "windows": 3632,
+          "feature_dimension": 100,
+          "truncated_reports": 170,
+          "fraction_truncated": 0.10932475884244373,
+          "retained_token_fraction": 0.8892031746559957,
+          "max_lexical_tokens": 510,
+          "extraction_seconds": 0.4838414999994711,
+          "extractor_method": "encode"
+        }
+      },
+      "lm_test_metrics": {
+        "test_perplexity": 80.09215382343636,
+        "test_cross_entropy_nats": 4.3831778945128415,
+        "source": "results\\transformer\\metrics.json"
+      },
+      "test_errors": 585,
+      "checkpoint": "E:\\Projects\\model-airplanes\\checkpoints\\transformer.pt"
+    }
+  },
+  "representations": {
+    "lstm": {
+      "train": [
+        12447,
+        128
+      ],
+      "validation": [
+        1534,
+        128
+      ],
+      "test": [
+        1555,
+        128
+      ]
+    },
+    "transformer": {
+      "train": [
+        12447,
+        100
+      ],
+      "validation": [
+        1534,
+        100
+      ],
+      "test": [
+        1555,
+        100
+      ]
+    }
+  },
+  "device": "cuda",
+  "torch_version": "2.14.1+cu126"
+}

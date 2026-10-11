@@ -1,1 +1,13 @@
-nltk>=3.9
+# Neural language models (RNN, LSTM, Transformer)
+torch>=2.5,<3
+numpy>=1.26,<3
+
+# Data processing and configuration
+pandas>=2.2,<4
+PyYAML>=6,<7
+
+# N-gram language model
+nltk>=3.9,<4
+
+# Training and validation loss curves
+matplotlib>=3.8,<4

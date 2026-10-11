@@ -1,0 +1,149 @@
+{
+  "model": "lstm",
+  "embedding_variant": "glove",
+  "embedding_frozen": true,
+  "embedding_source_path": "E:\\Projects\\model-airplanes\\checkpoints\\embeddings\\glove_100d.pt",
+  "trainable_parameters": 2769355,
+  "model_config": {
+    "embedding_dim": 100,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2
+  },
+  "context_length": 128,
+  "batch_size": 32,
+  "max_epochs": 12,
+  "epochs_run": 12,
+  "best_epoch": 12,
+  "best_validation_ce_nats": 4.522126704601044,
+  "best_validation_perplexity": 92.03111299456828,
+  "embedding_dim": 100,
+  "vocabulary_size": 19531,
+  "min_frequency": 2,
+  "parameters": 4722455,
+  "training_seconds": 380.3892300000025,
+  "validation_seconds": 19.017526700001326,
+  "training_plus_validation_seconds": 399.7021867000003,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "early_stopping_patience": 3,
+  "seed": 42,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "pytorch_version": "2.14.1+cu126",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "checkpoint_size_bytes": 19220219,
+  "checkpoint": "checkpoints\\lstm_glove.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "train_ce": 6.281279843885362,
+      "validation_ce": 5.80532374792408,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 30.80917799999952,
+      "validation_seconds": 1.5214971999994304
+    },
+    {
+      "epoch": 2,
+      "train_ce": 5.67456510077904,
+      "validation_ce": 5.429512490434667,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 30.13093739999931,
+      "validation_seconds": 1.5385557999998127
+    },
+    {
+      "epoch": 3,
+      "train_ce": 5.400856643397166,
+      "validation_ce": 5.195750696622071,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 32.04556759999832,
+      "validation_seconds": 1.5915018000014243
+    },
+    {
+      "epoch": 4,
+      "train_ce": 5.220109999548104,
+      "validation_ce": 5.035717946196903,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.96083010000075,
+      "validation_seconds": 1.593851600000562
+    },
+    {
+      "epoch": 5,
+      "train_ce": 5.089664112346842,
+      "validation_ce": 4.911756228261173,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.958798100000422,
+      "validation_seconds": 1.5891253000008874
+    },
+    {
+      "epoch": 6,
+      "train_ce": 4.98171712962371,
+      "validation_ce": 4.813809163349062,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.92900340000051,
+      "validation_seconds": 1.6015439000002516
+    },
+    {
+      "epoch": 7,
+      "train_ce": 4.89543761621752,
+      "validation_ce": 4.736505724006503,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.939100900000994,
+      "validation_seconds": 1.585068099999262
+    },
+    {
+      "epoch": 8,
+      "train_ce": 4.828342052288806,
+      "validation_ce": 4.676736306294139,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.92578920000051,
+      "validation_seconds": 1.5789158000006864
+    },
+    {
+      "epoch": 9,
+      "train_ce": 4.772023719447481,
+      "validation_ce": 4.626581321805515,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.95846470000106,
+      "validation_seconds": 1.6407414000004792
+    },
+    {
+      "epoch": 10,
+      "train_ce": 4.726104893025518,
+      "validation_ce": 4.584689484900251,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.88971390000006,
+      "validation_seconds": 1.5906968999988749
+    },
+    {
+      "epoch": 11,
+      "train_ce": 4.686205131159154,
+      "validation_ce": 4.550782632465203,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.947569300000396,
+      "validation_seconds": 1.6016737000009016
+    },
+    {
+      "epoch": 12,
+      "train_ce": 4.651878285074227,
+      "validation_ce": 4.522126704601044,
+      "train_tokens": 4000849,
+      "validation_tokens": 500832,
+      "training_seconds": 31.894277400000647,
+      "validation_seconds": 1.584355199998754
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "model": "lstm",
+  "context_length": 128,
+  "vocabulary_size": 19531,
+  "test_cross_entropy_nats": 4.305852403563682,
+  "test_perplexity": 74.13237923275072,
+  "test_tokens": 494008,
+  "parameters": 4722455,
+  "checkpoint_size_bytes": 19219967,
+  "inference_benchmark": {
+    "workload_tokens": 200,
+    "batch_size": 1,
+    "repeats": 3,
+    "times_seconds": [
+      0.11612760000025446,
+      0.11234280000007857,
+      0.11111729999993258
+    ],
+    "median_seconds": 0.11234280000007857,
+    "tokens_per_second": 1780.26540196488,
+    "timing_includes": "scoring known next-token probability, excluding tokenization and disk I/O; batch=1"
+  },
+  "generation_settings": {
+    "max_new_tokens": 40,
+    "seed": 42,
+    "temperature": 1.0,
+    "top_k": null,
+    "top_p": 1.0,
+    "prompts": [
+      "the aircraft",
+      "during approach",
+      "the captain",
+      "after landing"
+    ]
+  },
+  "device": "cuda"
+}

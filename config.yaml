@@ -35,7 +35,7 @@ evaluation:
     seed: 42
     temperature: 1.0
     top_k: null
-    top_p: null
+    top_p: 1.0 # previously null
     prompts:
       - "the aircraft"
       - "during approach"
