@@ -1,13 +1,25 @@
-# Neural language models (RNN, LSTM, Transformer)
-torch>=2.5,<3
-numpy>=1.26,<3
+# model-airplanes — dependencies for Parts I, II, and III
+# Use Python 3.11–3.13. Versions are compatible ranges, not an exact environment lock.
 
-# Data processing and configuration
+# Numerical computing and ASRS CSV processing
+numpy>=1.26,<3
 pandas>=2.2,<4
 PyYAML>=6,<7
 
 # N-gram language model
 nltk>=3.9,<4
 
-# Training and validation loss curves
+# RNN, LSTM, and causal Transformer language models
+torch>=2.5,<3
+
+# Train/test splitting and downstream logistic-regression classification
+scikit-learn>=1.5,<2
+
+# Self-trained CBOW and public pretrained GloVe embeddings
+# Gensim 4.4+ avoids older SciPy compatibility problems.
+gensim>=4.4,<5
+scipy>=1.13,<2
+
+# Learning curves and comparison plots
 matplotlib>=3.8,<4
+

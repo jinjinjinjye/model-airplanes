@@ -21,7 +21,7 @@ language_model:
   sequence_length: 128
 
 ngram:
-  candidate_orders: [2, 3, 4, 5]
+  candidate_orders: [2, 3, 5]
   discount: 0.75
   order_search_fraction: 0.2
   order_search_seed: 42
